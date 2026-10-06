@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "platform": "Windows x64 (portable); Linux x64 runtime for cloud testing only",
+  "recorded_at": "2026-10-04",
+  "policy": "Bundled official releases are pinned and checksummed. Only yt-dlp can subsequently be updated, after an explicit user click, to the official stable release with checksum and runnable-version verification. No silent automatic installation. Windows package is unsigned.",
+  "artifacts": [
+    {
+      "id": "electron-win32",
+      "version": "44.5.1",
+      "url": "https://github.com/electron/electron/releases/download/v44.5.1/electron-v44.5.1-win32-x64.zip",
+      "sha256": "9b382492dcfee91f8f9e92c91f7972550a1b95d2299cac72279dab33a600d7db",
+      "license": "MIT and bundled Chromium/Node third-party licenses",
+      "install": "vendor/electron-win32",
+      "checksum_source": "https://github.com/electron/electron/releases/download/v44.5.1/SHASUMS256.txt",
+      "bytes": 157998329
+    },
+    {
+      "id": "electron-linux",
+      "version": "44.5.1",
+      "url": "https://github.com/electron/electron/releases/download/v44.5.1/electron-v44.5.1-linux-x64.zip",
+      "sha256": "5bcd217611d6843ececd6c9e9c1fcd1da3ab066c43d8b1a9e4b44689a1fba6f5",
+      "license": "MIT and bundled Chromium/Node third-party licenses",
+      "install": "vendor/electron-linux",
+      "checksum_source": "https://github.com/electron/electron/releases/download/v44.5.1/SHASUMS256.txt",
+      "bytes": 122932200
+    },
+    {
+      "id": "yt-dlp-win32",
+      "version": "2026.08.19",
+      "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp.exe",
+      "sha256": "66674953fe251b89f4d08c5f0e35e0728679bd67ab3d7d05c0562af101dd3e7a",
+      "license": "Unlicense plus bundled dependencies (see THIRD_PARTY_LICENSES.txt)",
+      "install": "vendor/bin-win32/yt-dlp.exe",
+      "checksum_source": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/SHA2-256SUMS",
+      "bytes": 17840399
+    },
+    {
+      "id": "yt-dlp-linux",
+      "version": "2026.08.19",
+      "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp",
+      "sha256": "1fa6733c37ea6fb51c99ad8fe785e7b7e5f3246c9b980230329d4fb72ed8d4d6",
+      "license": "Unlicense plus bundled dependencies (see THIRD_PARTY_LICENSES.txt)",
+      "install": "vendor/bin-linux/yt-dlp",
+      "checksum_source": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/SHA2-256SUMS",
+      "bytes": 3072469
+    },
+    {
+      "id": "ffmpeg-win32",
+      "kind": "source-build",
+      "version": "9.0.2 + LAME 3.100 (CinderVault LGPL build)",
+      "filename": "cinder-vault-ffmpeg-9.0.2-lgpl-win64.zip",
+      "sha256": "bd84661bfeb1a9edce36131ab1688953fad35493e02f274738144bbbc25793bb",
+      "bytes": 13503095,
+      "license": "FFmpeg LGPL-2.1-or-later; LAME LGPL-2.0-or-later; compiler runtime notices preserved",
+      "archive_root": "cinder-vault-ffmpeg-9.0.2-lgpl-win64",
+      "install": "vendor/bin-win32/{ffmpeg.exe,ffprobe.exe}",
+      "checksum_source": "Locally compiled archive SHA-256, not an upstream Windows binary",
+      "build_recipe": "vendor/sources/rebuild-ffmpeg-win64.sh"
+    },
+    {
+      "id": "node-win32",
+      "version": "24.21.0",
+      "url": "https://nodejs.org/dist/v24.21.0/win-x64/node.exe",
+      "sha256": "ba4e6d110e8c1592a1ecd390f6b05f3da124b13871a5be62b341a07a853c6c32",
+      "license": "MIT and bundled dependency licenses",
+      "install": "vendor/bin-win32/node.exe",
+      "checksum_source": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+      "bytes": 93580104
+    }
+  ],
+  "sources": {
+    "electron": "https://github.com/electron/electron/tree/v44.5.1",
+    "yt-dlp": "https://github.com/yt-dlp/yt-dlp/tree/2026.08.19",
+    "ffmpeg": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz",
+    "node": "https://nodejs.org/dist/v24.21.0/node-v24.21.0.tar.xz",
+    "ffmpeg-exact-build-source": "https://github.com/FFmpeg/FFmpeg/commit/946fcce07b6dcd0331c8cc609192aeff5e1924f8",
+    "lame": "https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz"
+  },
+  "supporting_files": [
+    {
+      "id": "node-LICENSE",
+      "url": "https://raw.githubusercontent.com/nodejs/node/v24.21.0/LICENSE",
+      "filename": "node-LICENSE.txt",
+      "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace",
+      "bytes": 157609,
+      "install": "vendor/licenses/node-LICENSE.txt",
+      "checksum_source": "Locally calculated SHA-256 pin for this upstream text/source file; not a publisher-provided checksum"
+    },
+    {
+      "id": "yt-dlp-LICENSE",
+      "url": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/2026.08.19/LICENSE",
+      "filename": "yt-dlp-LICENSE.txt",
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c",
+      "bytes": 1211,
+      "install": "vendor/licenses/yt-dlp-LICENSE.txt",
+      "checksum_source": "Locally calculated SHA-256 pin for this upstream text/source file; not a publisher-provided checksum"
+    },
+    {
+      "id": "yt-dlp-THIRD_PARTY_LICENSES",
+      "url": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/2026.08.19/THIRD_PARTY_LICENSES.txt",
+      "filename": "yt-dlp-THIRD_PARTY_LICENSES.txt",
+      "sha256": "472aefe951c7db35e1657c1d13fd337140511ed6f2b329205105ad441c5a02b7",
+      "bytes": 243550,
+      "install": "vendor/licenses/yt-dlp-THIRD_PARTY_LICENSES.txt",
+      "checksum_source": "Locally calculated SHA-256 pin for this upstream text/source file; not a publisher-provided checksum"
+    },
+    {
+      "id": "yt-dlp-README",
+      "url": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/2026.08.19/README.md",
+      "filename": "yt-dlp-README.txt",
+      "sha256": "7ab6c7d23fb3dc84320c17b65838700b8c7e8d0a8d39a3528c268236f460cf69",
+      "bytes": 179072,
+      "install": "vendor/licenses/yt-dlp-README.md",
+      "checksum_source": "Locally calculated SHA-256 pin for this upstream text/source file; not a publisher-provided checksum"
+    },
+    {
+      "id": "ffmpeg-source",
+      "url": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz",
+      "filename": "ffmpeg-source.tar.xz",
+      "sha256": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+      "bytes": 12040788,
+      "install": "vendor/sources/ffmpeg-9.0.2.tar.xz",
+      "checksum_source": "Locally calculated SHA-256 pin for this upstream text/source file; not a publisher-provided checksum"
+    },
+    {
+      "id": "ffmpeg-source-signature",
+      "url": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz.asc",
+      "filename": "ffmpeg-source-signature.txt",
+      "sha256": "d617fd94ea354dadd2a8bb16243d37c44e1e9729b06b6ad58fe30bfb0fa943f2",
+      "bytes": 520,
+      "install": "vendor/sources/ffmpeg-9.0.2.tar.xz.asc",
+      "checksum_source": "Locally calculated SHA-256 pin for this upstream text/source file; not a publisher-provided checksum"
+    },
+    {
+      "id": "ffmpeg-source-signing-key",
+      "url": "https://ffmpeg.org/ffmpeg-devel.asc",
+      "filename": "ffmpeg-source-signing-key.txt",
+      "sha256": "397b3becedcd5a98769967ff1ff8501ddc89f8368b8f766e4701377d7dbaabe5",
+      "bytes": 1709,
+      "install": "vendor/sources/ffmpeg-devel.asc",
+      "checksum_source": "Locally calculated SHA-256 pin for this upstream text/source file; not a publisher-provided checksum"
+    },
+    {
+      "id": "electron-SHASUMS256.txt",
+      "url": "https://github.com/electron/electron/releases/download/v44.5.1/SHASUMS256.txt",
+      "filename": "electron-checksums.txt",
+      "sha256": "8cfa7460b2aaac1812bfeed3c6957d14ad384b9f31ae0407ba5e64bb6b43ec3e",
+      "bytes": 6740,
+      "install": "vendor/licenses/checksums/electron-SHASUMS256.txt",
+      "checksum_source": "Local SHA-256 pin of upstream published checksum list"
+    },
+    {
+      "id": "node-SHASUMS256.txt",
+      "url": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+      "filename": "node-checksums.txt",
+      "sha256": "f410428039e2c922a14058df067a4482691c9304a5c01a75847f9f3f2d3307f6",
+      "bytes": 3171,
+      "install": "vendor/licenses/checksums/node-SHASUMS256.txt",
+      "checksum_source": "Local SHA-256 pin of upstream published checksum list"
+    },
+    {
+      "id": "yt-dlp-SHA2-256SUMS",
+      "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/SHA2-256SUMS",
+      "filename": "ytdlp-checksums.txt",
+      "sha256": "a63701f30755cb4d9317950d69703e9d751d490cb1b7059e1bb501a353fe7dcb",
+      "bytes": 1595,
+      "install": "vendor/licenses/checksums/yt-dlp-SHA2-256SUMS",
+      "checksum_source": "Local SHA-256 pin of upstream published checksum list"
+    },
+    {
+      "id": "lame-source",
+      "url": "https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz",
+      "filename": "lame-3.100.tar.gz",
+      "sha256": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+      "bytes": 1524133,
+      "install": "vendor/sources/lame-3.100.tar.gz",
+      "checksum_source": "Matches SHA256 published in Debian lame_3.100-6.dsc; upstream SourceForge archive"
+    },
+    {
+      "id": "lame-debian-source-checksum",
+      "url": "https://deb.debian.org/debian/pool/main/l/lame/lame_3.100-6.dsc",
+      "filename": "lame-debian-source-checksum.dsc",
+      "sha256": "6a402771625fa80785a2b904697ba9c7e74a1ee4fa536354e9e88f08e2a4073b",
+      "bytes": 2168,
+      "install": "vendor/sources/lame-debian-source-checksum.dsc",
+      "checksum_source": "Local pin of Debian signed source control file; PGP signature not separately verified"
+    }
+  ],
+  "verification": {
+    "runtime_sha256": "Five prebuilt runtime artifacts matched publisher checksum lists; FFmpeg/FFprobe were compiled locally from verified source and have local build hashes.",
+    "ffmpeg_source_pgp": "VALIDSIG FCF986EA15E6E293A5644F10B4322F04D67658D8; fingerprint checked against https://ffmpeg.org/download.html",
+    "windows_execution": "Windows native Electron EXE launched and rendered; packaged yt-dlp, FFmpeg, FFprobe and Node executed. See WINDOWS-VALIDATION.txt. No code signature or universal antivirus/SmartScreen claim.",
+    "linux_execution": "yt-dlp --version: 2026.08.19; Electron run-as-Node --version: v24.21.0",
+    "source_distribution": "Exact hash-pinned FFmpeg/LAME pristine source archives are included in third_party/sources, with saved configuration and a reconstructed rebuild recipe; the recipe itself has not been rerun on this Windows host.",
+    "media_functional_tests": "Native Linux build with same codec configuration passed MP4/MKV/WebM stream-copy merging, AAC/Opus/Vorbis to MP3, Opus to M4A, pipe PCM output, MPEGTS/HLS local remux. Windows configuration and PE imports checked; Windows execution not tested. Subsequent Windows validation: YouTube three-item batch and Twitch clip downloaded with video+audio; FFprobe frame decoding passed. Bilibili partial CDN transfer/cancel/retry passed; full Bilibili merge was not tested."
+  },
+  "toolchain": {
+    "name": "LLVM-MinGW",
+    "version": "20260922 UCRT Linux x64",
+    "url": "https://github.com/mstorsjo/llvm-mingw/releases/download/20260922/llvm-mingw-20260922-ucrt-ubuntu-22.04-x86_64.tar.xz",
+    "sha256": "bb7bb7654b33d5aa8712acb837c963b2e0c56352560c76105270a3268c665c21",
+    "bytes": 83924028,
+    "checksum_source": "Official GitHub release asset digest",
+    "clang": "23.1.2 / LLVM commit 85ac560262434c9ccfc0c183ec22d4138ed647fb",
+    "installed_globally": false
+  },
+  "built_files": [
+    {
+      "path": "vendor/bin-win32/ffmpeg.exe",
+      "sha256": "b835590b6f1c1d36f3b2b76a06fb5f983f313eed973b4d94c6257dc0d64aefc2",
+      "bytes": 14016512
+    },
+    {
+      "path": "vendor/bin-win32/ffprobe.exe",
+      "sha256": "4f182076bf4ab290a8d2b1bb57bfe6943cdf2e6d759b38db912bc955c54d8da8",
+      "bytes": 13839872
+    }
+  ],
+  "windows_release": {
+    "application_version": "1.0.3",
+    "electron_executable": "Upstream executable renamed with custom RT_ICON and RT_GROUP_ICON resources; runtime code not rebuilt. PE version metadata continues to identify Electron 44.5.1.",
+    "native_icon_helper": "resources/app/native/WindowIcons.cs and WindowIcons.exe; uses Windows .NET Framework 4.x to set separate small and large icons on the owning window.",
+    "engine_update": "Official yt-dlp stable GitHub release only; background checks with 12h success/1h failure cache; explicit install; queue exclusion; official SHA2-256SUMS plus API digest; atomic replacement, retained backup and recovery journal."
+  }
+}
