@@ -1,0 +1,23 @@
+name: Tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: JavaScript syntax
+        working-directory: app
+        run: npm run check
+      - name: Offline unit and renderer tests
+        working-directory: app
+        run: npm test
+      - name: Offline packaging and publish-validation tests
+        run: python -m unittest discover -s scripts -p "test_*.py" -v
