@@ -1,0 +1,13 @@
+{
+  "name": "cinder-vault",
+  "version": "1.0.5",
+  "description": "烬匣 · 中文批量视频下载器",
+  "main": "main.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "check": "node --check main.js && node --check preload.js && node --check lib/core.js && node --check lib/channels.js && node --check lib/channel-import.js && node --check ui/renderer.js"
+  }
+}
